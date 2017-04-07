@@ -26,7 +26,6 @@ export default Vue.extend({
         saveURL() {
             if (this.feedURL) {
                 this.$localStorage.set('feedsList', [...this.$localStorage.get('feedsList'), { id: Date.now(), url: this.feedURL }]);
-                console.log(this.$localStorage.get('feedsList'));
                 return;
             }
             /* eslint-disable no-alert, no-undef */
