@@ -1,36 +1,12 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 
-import { LoadingState } from 'src/config/loading-state';
-import Loader from 'components/Loader/Loader';
-
-Vue.use(VueRouter);
+import Home from 'components/Home/home';
 
 import 'src/config/http';
-import routes from 'src/routes';
-import 'src/main.scss';
-
-export const router = new VueRouter({
-    routes,
-    mode: 'history',
-    linkActiveClass: 'active'
-});
+import 'src/styles/main.scss';
 
 new Vue({
-    router,
     components: {
-        Loader,
+        Home,
     },
-
-    data(){
-        return {
-            isLoading: false
-        };
-    },
-
-    created(){
-        LoadingState.$on('toggle', (isLoading) => {
-            this.isLoading = isLoading;
-        });
-    }
 }).$mount('#app');
