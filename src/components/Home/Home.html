@@ -2,7 +2,8 @@
 
     <h1>Hello, Vue!</h1>
 
-    <input v-model="message" placeholder="edit me">
-    <p>Message is: {{ message }}</p>
+    <label for="feed-url">Feed URL:</label>
+    <input id="feed-url" v-model="feedURL" placeholder="http://www.pavyzdys.lt">
+    <button v-on:click="saveURL">Save</button>
 
 </section>
