@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import template from './FeedModal.html';
-import eventBus from '../eventBus';
+import eventBus from '../../utils/eventBus';
 
 export default Vue.extend({
     template,

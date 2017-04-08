@@ -2,7 +2,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import template from './FeedList.html';
 import { API_BASE } from 'src/config/constants';
-import eventBus from '../eventBus';
+import eventBus from '../../utils/eventBus';
 
 export default Vue.extend({
     template,
