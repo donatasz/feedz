@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import template from './FeedInput.html';
+import eventBus from '../../utils/eventBus';
 
 export default Vue.extend({
     template,
@@ -19,8 +20,9 @@ export default Vue.extend({
         },
     },
     methods: {
-        saveURL() {
+        showNews() {
             this.$localStorage.set('feedsList', [...this.$localStorage.get('feedsList'), { id: Date.now(), url: this.feedURL }]);
+            eventBus.$emit('loadNews', this.feedURL);
         },
     },
     created() {

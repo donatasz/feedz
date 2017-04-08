@@ -1,10 +1,10 @@
 <div>
-    <h2>News from your feeds</h2>
+    <h2>News from <a :href="feedURL" title="RSS Feed URL" target="_blank">{{ feedURL }}</a></h2>
 
-    <ul v-if="feedsList && feedsList.length">
+    <ol v-if="feedsList && feedsList.length">
         <li v-for="feed in feedsList">
             <a href="#" v-on:click="showFeed(feed, $event)" :title="feed.title">{{ feed.title }}</a>
         </li>
-    </ul>
+    </ol>
 
 </div>

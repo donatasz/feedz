@@ -1,5 +1,5 @@
 <div>
-    <label for="feed-url">Feed URL:</label>
+    <label for="feed-url">RSS Feed URL:</label>
     <input id="feed-url" v-model="feedURL" placeholder="http://www.pavyzdys.lt">
-    <button v-on:click="saveURL" :disabled="feedURL.length > 0 ? false : true">Save</button>
+    <button v-on:click="showNews" :disabled="feedURL.length > 0 ? false : true">Show</button>
 </div>

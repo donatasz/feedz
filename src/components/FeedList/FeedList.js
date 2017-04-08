@@ -8,11 +8,14 @@ export default Vue.extend({
     template,
     data() {
         return {
+            feedURL: '',
             feedsList: [],
         };
     },
     methods: {
         loadData(feedURL) {
+            this.feedURL = feedURL;
+
             axios.get(`${API_BASE}?rss_url=${feedURL}`)
                 .then(response => {
                     if (response.data.status === 'ok') {
@@ -30,7 +33,14 @@ export default Vue.extend({
     },
     created() {
         let url = 'http://feeds.twit.tv/brickhouse.xml';
+        // let url = 'http://www.lrt.lt/naujienos/lietuvoje?rss';
 
+        this.feedURL = url;
         this.loadData(url);
+
+        eventBus.$on('loadNews', (feedURL) => {
+            console.log(feedURL);
+            this.loadData(feedURL);
+        });
     },
 });
