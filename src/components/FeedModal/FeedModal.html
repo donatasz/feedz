@@ -1,0 +1,8 @@
+<div>
+    <div class="overlay is-hidden" id="overlay"></div>
+    <div class="modal-content is-hidden" id="modal">
+        <span class="button-close" v-on:click="closeModal"></span>
+        <h3>{{ feed.title }}</h3>
+        <div v-html="feed.description"></div>
+    </div>
+</div>
