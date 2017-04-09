@@ -1,5 +1,7 @@
 .modal-content {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     top: 0;
     right: 0;
     left: 0;
@@ -23,6 +25,8 @@
 
 .modal-footer {
     text-align: right;
+    margin-top: auto;
+    margin-bottom: 0;
 
     @include xsmall {
         margin-top: 10px;

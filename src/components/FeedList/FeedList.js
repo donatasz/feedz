@@ -2,7 +2,7 @@ import Vue from 'vue';
 import _ from 'lodash';
 import axios from 'axios';
 import template from './FeedList.html';
-import { API_BASE } from 'src/config/constants';
+import { API_BASE } from '../../config/constants';
 import eventBus from '../../utils/eventBus';
 
 export default Vue.extend({
@@ -21,14 +21,17 @@ export default Vue.extend({
     methods: {
         loadData(feedURL) {
             this.feedURL = feedURL;
+            eventBus.$emit('loading', true);
 
             axios.get(`${API_BASE}?rss_url=${feedURL}`)
                 .then(response => {
                     if (response.data.status === 'ok') {
                         this.feedsList = response.data.items;
+                        eventBus.$emit('loading', false);
                     }
                 }).catch(errorResponse => {
                     console.log('API responded with:', errorResponse);
+                    eventBus.$emit('loading', false);
                 });
         },
         showFeed(feed, event) {
