@@ -3,10 +3,9 @@
 
     <div class="history-list-container">
         <ul class="history-list" v-if="feedsList && feedsList.length">
-            <li v-for="feed in feedsList">
+            <li v-for="feed in orderedByDate">
                 {{ feed.id | formatDate }} - {{ feed.url }}
             </li>
         </ul>
     </div>
-
 </div>

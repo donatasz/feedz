@@ -31,12 +31,10 @@ export default Vue.extend({
                     console.log('API responded with:', errorResponse);
                 });
         },
-
         showFeed(feed, event) {
             event.preventDefault();
             eventBus.$emit('showModal', feed);
         },
-
         changeOrder(order) {
             let newList = [...this.feedsList];
 

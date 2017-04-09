@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import _ from 'lodash';
 import template from './FeedHistory.html';
 import eventBus from '../../utils/eventBus';
 import { pad } from '../../utils/helpers';
@@ -42,6 +43,15 @@ export default Vue.extend({
             let sec = a.getSeconds();
             return `${year}-${pad(month)}-${pad(day)} ${hour}:${min}:${sec}`;
         },
+    },
+    computed: {
+        /**
+         * Order feed list so the most recent is up top
+         * @returns {Array|*}
+         */
+        orderedByDate() {
+            return _.orderBy(this.feedsList, 'id', 'desc');
+        }
     },
     created() {
         this.showFeedHistory();
