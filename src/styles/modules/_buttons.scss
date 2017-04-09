@@ -1,0 +1,38 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: calc(.75rem + 1px) calc(1rem + 1px);
+    text-align: center;
+    color: $color-white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+.btn-primary[disabled] {
+    background: $color-btn-disabled;
+    cursor: auto;
+}
+
+.btn-success {
+    background: $color-success;
+}
+
+.btn-cancel {
+    background: $color-yellow;
+}
+
+.btn-close {
+    position: absolute;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAowAAAKMB8MeazgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAB5SURBVDiNrZPRCcAwCEQfnUiySAZuF8kSWeH6Yz8KrQZMQAicJ+epAB0YwAmYJKIADLic0/GPPCbQAnLznCd/4NWUFfkgy1VjH8CryA95ApYltAiTRCZxpuoW+gz9WXE6NPeg+ra1UDIxGlWEObe4SGxY5fIxlc75Bkt9V4JS7KWJAAAAAElFTkSuQmCC59ef34356faa7edebc7ed5432ddb673d');
+}

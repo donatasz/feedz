@@ -10,20 +10,18 @@ export default Vue.extend({
         };
     },
     methods: {
+        openFeed(feedData) {
+            this.closeModal();
+            window.open(feedData.link, '_blank');
+        },
         openModal(feedData) {
-            let overlay = document.getElementById('overlay');
-            let modal = document.getElementById('modal');
-
             this.feed = feedData;
-
-            overlay.classList.remove('is-hidden');
-            modal.classList.remove('is-hidden');
+            this.$refs.overlay.classList.remove('is-hidden');
+            this.$refs.modal.classList.remove('is-hidden');
         },
         closeModal(){
-            let overlay = document.getElementById('overlay');
-            let modal = document.getElementById('modal');
-            overlay.classList.add('is-hidden');
-            modal.classList.add('is-hidden');
+            this.$refs.overlay.classList.add('is-hidden');
+            this.$refs.modal.classList.add('is-hidden');
         },
     },
     created() {

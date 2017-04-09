@@ -11,10 +11,13 @@
 // Theme
 @import 'themes/cayman';
 
+// Layout
+@import 'layout/global';
+
+// Modules
+@import 'modules/buttons';
+@import 'modules/inputs';
+@import 'modules/modal';
+
 // Pages
 @import 'pages/home';
-
-// Global
-.app-container {
-    position: relative;
-}
