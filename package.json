@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "lodash": "^4.17.4",
     "normalize-scss": "^6.0.0",
     "vue": "^2.2.2",
     "vue-localstorage": "^0.1.3"

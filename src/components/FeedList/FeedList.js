@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import _ from 'lodash';
 import axios from 'axios';
 import template from './FeedList.html';
 import { API_BASE } from 'src/config/constants';
@@ -10,6 +11,11 @@ export default Vue.extend({
         return {
             feedURL: '',
             feedsList: [],
+            selectedOrdering: 'date',
+            options: [
+                { text: 'Publication date', value: 'date' },
+                { text: 'Alphabetically', value: 'alphabetical' },
+            ]
         };
     },
     methods: {
@@ -30,10 +36,23 @@ export default Vue.extend({
             event.preventDefault();
             eventBus.$emit('showModal', feed);
         },
+
+        changeOrder(order) {
+            let newList = [...this.feedsList];
+
+            console.log(order === 'alphabetical');
+
+            if (order === 'alphabetical') {
+                this.feedsList = _.orderBy(newList, ['title'], ['asc']);
+            }
+
+            if (order === 'date') {
+                this.feedsList = _.orderBy(newList, ['pubDate'], ['desc']);
+            }
+        },
     },
     created() {
         eventBus.$on('loadNews', (feedURL) => {
-            console.log(feedURL);
             this.loadData(feedURL);
         });
     },

@@ -1,9 +1,19 @@
 <div v-if="feedsList.length">
     <h2>News from: <a :href="feedURL" title="RSS Feed URL" target="_blank">{{ feedURL }}</a></h2>
 
+    <label for="sort-select">Sort by:
+        <select id="sort-select" v-model="selectedOrdering" v-on:change="changeOrder(selectedOrdering)">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+    </label>
+
+    <hr>
+
     <ol v-if="feedsList && feedsList.length">
         <li v-for="feed in feedsList">
-            <a href="#" v-on:click="showFeed(feed, $event)" :title="feed.title">{{ feed.title }}</a>
+            <a href="#" v-on:click="showFeed(feed, $event)" :title="feed.title"> {{ feed.pubDate }} {{ feed.title }}</a>
         </li>
     </ol>
 
