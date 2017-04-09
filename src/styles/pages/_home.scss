@@ -1,7 +1,14 @@
-.history-list {
+.history-list-container {
     height: 100px;
     padding: 10px;
     border: 1px solid $border-color;
     border-radius: 5px;
     overflow: scroll;
+}
+
+.history-list,
+.feeds-list {
+    @include xsmall {
+        padding-left: 20px;
+    }
 }

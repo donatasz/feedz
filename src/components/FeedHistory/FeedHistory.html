@@ -1,8 +1,8 @@
 <div>
     <h2>Entered URL History</h2>
 
-    <div class="history-list">
-        <ul v-if="feedsList && feedsList.length">
+    <div class="history-list-container">
+        <ul class="history-list" v-if="feedsList && feedsList.length">
             <li v-for="feed in feedsList">
                 {{ feed.url }}
             </li>

@@ -9,10 +9,24 @@
     margin: 5% auto 0;
     background: $color-white;
     z-index: 2;
+
+    @include xsmall {
+        width: auto;
+    }
+
+    @include small {
+        width: auto;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
 }
 
 .modal-footer {
     text-align: right;
+
+    @include xsmall {
+        margin-top: 10px;
+    }
 }
 
 .overlay {
