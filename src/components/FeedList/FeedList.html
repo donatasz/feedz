@@ -1,5 +1,5 @@
 <div v-if="feedsList.length">
-    <h2>News from <a :href="feedURL" title="RSS Feed URL" target="_blank">{{ feedURL }}</a></h2>
+    <h2>News from: <a :href="feedURL" title="RSS Feed URL" target="_blank">{{ feedURL }}</a></h2>
 
     <ol v-if="feedsList && feedsList.length">
         <li v-for="feed in feedsList">
